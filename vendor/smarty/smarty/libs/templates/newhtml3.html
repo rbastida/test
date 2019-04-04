@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+
+              $.ajax({
+                        type:           'POST',
+                        dataType:       'text',
+                        async:          true,
+                        url:            'ajax.consulta_requisicao_estagiario.php',
+                        data:           dados,
+                        success: function (data) {
+                            
+                            alert('tamanho='+data.length);
+                            
+                            if(data.length > 0) {
+                                for(key in data) {
+                                    var tmp = data[key];
+                                    console.log(tmp.cpf_estagiario);
+                                }
+                            } else {
+                                console.log("no result");
+                            }
+                                
+                                // console.log(response.cpf_estagiario);
+                                
+                       
+                        }
+                    });
